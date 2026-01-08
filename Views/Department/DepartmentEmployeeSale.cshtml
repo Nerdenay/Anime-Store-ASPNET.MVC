@@ -1,0 +1,45 @@
+﻿@using Staj_Projesi_1.Models.Classes
+@model List<SalesAction>
+
+@{
+
+	Layout = "~/Views/Shared/Admin_Layout.cshtml";
+
+}
+
+<br />
+<h2> Department Employee Sales</h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+
+	<li class="breadcrumb-item active">Employee Name: @ViewBag.per </li>
+
+</ol>
+
+<table class=" table table-condensed">
+	<tr>
+		<th>SALEID</th>
+		<th>PRODUCT ID</th>
+		<th>BUYER ID</th>
+		<th>PRICE</th>
+		<th>AMOUNT</th>
+		<th>TOTAL</th>
+		<th>DATE</th>
+	</tr>
+
+	@foreach(var x in Model)
+	{
+		<tr>
+			<td>@x.SaleId</td>
+			<td>@x.ProductID</td>
+			<td>@x.CurrentID</td>
+			<td>@x.price</td>
+			<td>@x.Amount</td>
+			<td>@x.TotalSale</td>
+			<td>@x.Date</td>
+			<td> <a href="#" class="btn btn-check" style="background-color:slateblue"> Print </a></td>
+		</tr>
+	}
+
+</table>

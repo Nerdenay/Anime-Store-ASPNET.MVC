@@ -1,0 +1,42 @@
+﻿ @using Staj_Projesi_1.Models.Classes;
+ @model List<Category>
+
+@{
+
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";  // Uses admin layout
+}
+
+
+<table class="table table-bordered" style=" margin-top:20px;"> 
+
+        <tr>
+
+        <th>ID</th>
+        <th>Category</th>
+        <th>Delete</th>
+        <th>Update</th>
+
+        </tr>
+
+    @foreach(var k in Model)
+    {
+
+        <tr>
+            <td>
+                @k.CategoryID
+            </td>
+             
+            <td>
+                @k.CategoryName
+            </td>
+
+            <td><a href="/Category/DeleteCategory/@k.CategoryID" class="btn btn-danger"> Delete </a></td>
+            <td><a href="/Category/CategoryU/@k.CategoryID" class="btn btn-success"> Update </a></td>
+        
+       </tr>
+    }
+
+</table> 
+
+<a href="/Category/AddCategory" class="btn btn-primary"> Add Category </a>
+

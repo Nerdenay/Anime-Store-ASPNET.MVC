@@ -1,0 +1,52 @@
+﻿@using Staj_Projesi_1.Models.Classes;
+@model List<SalesAction> 
+@{
+	Layout = "~/Views/Shared/Admin_Layout.cshtml";  // Uses admin layout
+}
+
+<h2>Sales Action</h2> 
+
+<table class="table table-bordered" style=" margin-top:20px;">
+
+    <tr>
+
+        <th>ID</th>
+        <th>DATE</th>
+        <th>AMOUNT</th>
+        <th>PRICE</th>
+        <th>TOTAL SALE</th>
+        <th>PRODUCT</th>
+        <th>BUYER</th>
+        <th>EMPLOYEE</th>
+        <th>UPDATE</th>
+        <th>INFOS</th>
+
+    </tr>
+
+    @foreach (var s in Model)
+    {
+
+
+        <tr>
+            <td>@s.SaleId</td>
+            <td>@s.Date</td>
+            <td>@s.Amount</td>
+            <td>@s.price</td>
+            <td>@s.TotalSale</td>
+            <td>@s.ProductID</td>
+            <td>@s.CurrentID</td>
+            <td>@s.EmployeeID</td>
+        
+            @* <td>@s.Products.ProductName</td>
+            <td>@s.Currents.CurrentName @s.Currents.CurrentSurname</td>              isimleri çekemiyorum tablolarda ilişki sorunu var bak onlara
+            <td>@s.Employee.EmployeeName @s.Employee.EmployeeSurname</td>  *@  
+
+            <td><a href="#" class="btn btn-danger"> Update </a></td>
+            <td><a href="#" class="btn btn-success"> Info </a></td>
+
+        </tr>
+    }
+
+</table>
+
+<a href="/SalesAction/NewSale" class="btn btn-primary"> New Sale </a>

@@ -1,0 +1,22 @@
+﻿@model Staj_Projesi_1.Models.Classes.Category 
+
+@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br />
+<h2>  Category Update </h2>
+<br />
+@using(Html.BeginForm("CategoryUpdate", "Category" , FormMethod.Post))
+{
+    <div class="form-group">  
+
+        @Html.LabelFor(x=>x.CategoryName)
+        @Html.TextBoxFor(x=>x.CategoryName, new {@class="form-control"})
+        @Html.HiddenFor(u=>u.CategoryID)    <!-- category Id hatası aldınığı için hidden olarak eklendi-->
+
+    </div>
+    <button class="btn btn-warning">Update</button>
+
+
+}

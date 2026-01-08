@@ -1,0 +1,22 @@
+﻿@model Staj_Projesi_1.Models.Classes.Department
+
+@{
+	Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br />
+<h2>  Department Update </h2>
+<br />
+@using (Html.BeginForm("UppdateDepartment", "Department", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.LabelFor(x => x.DepartmentName)
+        @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+        @Html.HiddenFor(u => u.DepartmentID)    <!-- department Id hatası aldınığı için hidden olarak eklendi-->
+
+    </div>
+    <button class="btn btn-default" style="background-color:yellowgreen">Update</button>
+
+
+}

@@ -1,0 +1,25 @@
+﻿@model Staj_Projesi_1.Models.Classes.Employee
+
+@{
+	Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h2> New Employee Page</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.EmployeeName)
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control " })
+    <br />
+    @Html.LabelFor(x => x.EmployeeSurname)
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control " })
+    <br />
+    @Html.LabelFor(x => x.EmployeePic)
+    @Html.TextBoxFor(x => x.EmployeePic, new { @class = "form-control " })
+    <br />  
+    @Html.LabelFor(x => x.Department)
+    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.d, new { @class = "form-control"} ) 
+    <br />
+    <button class="btn btn-info"> Save </button> 
+
+</form>

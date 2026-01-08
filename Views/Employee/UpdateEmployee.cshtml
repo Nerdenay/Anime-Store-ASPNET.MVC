@@ -1,0 +1,27 @@
+﻿@model Staj_Projesi_1.Models.Classes.Employee
+@{
+	Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br />
+<h2>  Employee Update </h2>
+<br />
+@using (Html.BeginForm("UppdateEmployee", "Employee", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.HiddenFor(u => u.EmployeeID)
+        @Html.LabelFor(x => x.EmployeeName)
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })     
+        @Html.LabelFor(x => x.EmployeeSurname)
+        @Html.TextBoxFor(x => x.EmployeeSurname,  new { @class = "form-control" })
+        @Html.LabelFor(x => x.EmployeePic)
+        @Html.TextBoxFor(x => x.EmployeePic, new { @class = "form-control" })
+        @Html.LabelFor(x => x.DepartmentID)
+        @Html.TextBoxFor(x => x.DepartmentID, new { @class = "form-control" })
+
+    </div>
+    <button class="btn btn-default" style="background-color:yellowgreen">Update</button>
+
+
+}

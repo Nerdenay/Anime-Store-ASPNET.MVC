@@ -1,0 +1,50 @@
+﻿@using Staj_Projesi_1.Models.Classes;
+@model List<Products>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br/>
+
+
+<table class="table table-bordered">
+
+        <tr>
+             <th>ID</th>
+             <th>PRODUCT</th>
+             <th>BRAND</th>
+             <th>STOCK</th>
+             <th>PURCHASE PRICE</th>
+             <th>SALE PRICE</th>
+             <th>PRODUCT PIC</th>
+             <th>CATEGORY</th> 
+             <th>DELETE</th>
+             <th>UPDATE</th>
+        </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.ProductID</td>
+            <td>@p.ProductName</td>           
+            <td>@p.ProductBrand</td>
+            <td>@p.Stock</td>
+            <td>@p.PurchasePrice</td>
+            <td>@p.SalePrice</td>
+            <td>@p.ProductPic</td>
+            <td>@p.Category.CategoryName</td>
+            <td>
+                <a href="/Product/DeleteProduct/@p.ProductID" class=" btn btn-danger">Delete</a>
+            </td>
+            <td>
+                <a href="/Product/GetProduct/@p.ProductID" class=" btn btn-success">Update</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+
+<a href="/Product/NewProduct" class="btn btn-info"> New Product </a>

@@ -1,0 +1,43 @@
+﻿@using Staj_Projesi_1.Models.Classes;
+@model List<Department>
+
+@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";  // Uses admin layout
+}
+
+
+<table class="table table-bordered" style=" margin-top:20px;">
+
+    <tr>
+
+        <th>ID</th>
+        <th>DepartmentName</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Department Info</th>
+
+    </tr>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.DepartmentID
+            </td>
+
+            <td>
+                @k.DepartmentName
+            </td>
+
+            <td><a href="/Department/DeleteDepartment/@k.DepartmentID" class="btn btn-danger"> Delete </a></td>
+            <td><a href="/Department/UpdateDepartment/@k.DepartmentID" class="btn btn-success"> Update </a></td>
+            <td><a href="/Department/DepartmentInfo/@k.DepartmentID" class="btn btn-outline-dark style="background-color:burlywood"> Info </a></td>
+
+        </tr>
+    }
+
+</table>
+
+<a href="/Department/AddDepartment" class="btn btn-info" style="margin-right: 10px"> Add Department </a>
+
+<a href="/Employee/PersonelGalery" class="btn btn-dark"> Our Team  </a>

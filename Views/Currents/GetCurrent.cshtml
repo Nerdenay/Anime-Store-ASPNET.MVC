@@ -1,0 +1,35 @@
+﻿@model Staj_Projesi_1.Models.Classes.Currents
+@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br />
+<h2>Update the purchaser</h2>
+<br />
+
+@using (Html.BeginForm("UpdateCurrent", "Currents", FormMethod.Post))
+{
+    
+    <div class="form-group"> 
+
+        @Html.HiddenFor(h=>h.CurrentID) 
+        @Html.LabelFor(x=>x.CurrentName)
+        @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CurrentSurname)
+        @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CurrentCity)
+        @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CurrentMail)
+        @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+        <br />
+               
+        <button class="btn btn-default" style ="background-color:aquamarine">Update</button>
+    </div>
+
+}
+
+
+

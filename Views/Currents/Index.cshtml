@@ -1,0 +1,36 @@
+﻿ @using Staj_Projesi_1.Models.Classes;
+ @model List<Currents>
+
+@{
+	Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h2>Purchasers</h2>
+<br />
+
+<table class="table table-bordered">
+	<tr> 
+		<th>PURCHASER ID</th>
+		<th>NAME</th>
+		<th>SURNAME</th>
+		<th>CITY</th>
+		<th>MAIL</th>
+		<th>DELETE</th>
+		<th>UPDATE</th>
+		<th>INFO</th>
+    </tr>
+	@foreach(var c in Model)
+	{
+		<tr>
+			<td>@c.CurrentID</td>
+			<td>@c.CurrentName</td>
+			<td>@c.CurrentSurname</td>
+			<td>@c.CurrentCity</td>
+			<td>@c.CurrentMail</td>
+			<td><a href="/Currents/CurrentDelete/@c.CurrentID" class="btn btn-danger">Delete</a></td>
+			<td><a href="/Currents/GetCurrent/@c.CurrentID" class="btn btn-warning">Update</a></td>
+			<td><a href="/Currents/CurrentInfo/@c.CurrentID" class="btn btn-default" style="background-color:olivedrab ">Info</a></td>
+		</tr>
+	}
+</table>
+<a href="/Currents/NewCurrent" class="btn btn-info ">New Purchaser</a>

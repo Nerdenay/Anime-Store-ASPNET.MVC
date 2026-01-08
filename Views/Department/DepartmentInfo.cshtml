@@ -1,0 +1,39 @@
+﻿@using Staj_Projesi_1.Models.Classes
+@model List<Employee> 
+
+
+@{
+	Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br />
+<h2> Department Info </h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+
+	<li class="breadcrumb-item active">Department Name: @ViewBag.d </li> 
+
+</ol>
+
+<table class="table table-hover">
+
+	<tr>
+		<th>PERSONEL ID</th>
+		<th>NAME</th>
+		<th>SURNAME</th>
+		<th>PICTURE</th>
+	</tr>
+	@foreach ( var x in Model)
+	{
+		<tr>
+			<td>@x.EmployeeID </td>
+			<td>@x.EmployeeName </td>
+			<td>@x.EmployeeSurname </td>
+			<td>@x.EmployeePic </td>
+			<td> <a href="/Department/DepartmentEmployeeSale/@x.EmployeeID" class="btn btn-default" style="background-color:maroon ; color:antiquewhite"> Sales </a> </td>
+
+		</tr>
+	} 
+
+</table>
